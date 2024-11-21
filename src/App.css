@@ -1,0 +1,241 @@
+#Box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 30%;
+}
+#Box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 30%;
+}
+#innerbox2 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#f {
+  cursor: pointer;
+}
+/* 
+make the encoded in single text file codemap and binary merge it
+const binaryString = "010101011011";
+
+// Convert binary string to Uint8Array
+const binaryArray = new Uint8Array(Math.ceil(binaryString.length / 8));
+for (let i = 0; i < binaryString.length; i += 8) {
+  binaryArray[i / 8] = parseInt(binaryString.substring(i, i + 8), 2);
+}
+
+// Create Blob from Uint8Array
+const blob = new Blob([binaryArray], { type: 'application/octet-binary' });
+
+// Create URL for Blob
+const url = URL.createObjectURL(blob);
+
+// Create anchor tag for download
+const a = document.createElement('a');
+a.href = url;
+a.download = 'output.bin';
+a.click();
+
+// Revoke URL after download
+URL.revokeObjectURL(url);
+*/
+
+/*
+show the hashmap to user
+show how much the space they have saved
+
+
+*/
+
+.full-Page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  justify-content: center;
+  gap: 50px;
+}
+#encode,
+#decode {
+  height: 300px;
+  width: 30%;
+  position: relative;
+  top: 20%;
+  background-color: #383434;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#title-encode,
+#title-decode {
+  font-size: 1.8vw;
+  padding: 10px;
+}
+#input-encode,
+#input-decode {
+  height: 50% !important;
+  width: 90% !important;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 10px;
+}
+#compress-encode {
+  position: absolute;
+  top: 85%;
+  left: 80%;
+  cursor: pointer;
+  font-size: 1vw;
+  transition: scale 0.4s;
+}
+textarea:focus {
+  outline: none; /* Removes the highlight border */
+}
+
+#compress-encode:hover {
+  scale: 0.8;
+}
+#decode-encode {
+  position: absolute;
+  top: 85%;
+  left: 80%;
+  cursor: pointer;
+  transition: scale 0.4s;
+}
+#decode-encode:hover {
+  scale: 1.2;
+}
+#codeMapInput {
+  display: none;
+}
+#fileinput {
+  position: absolute;
+  left: 5%;
+  top: 85%;
+  cursor: pointer;
+  font-size: 1vw;
+}
+#result-encode {
+  position: absolute;
+  top: 110%;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#real-result-encode {
+  height: 100%;
+  width: 100%;
+  text-wrap: wrap;
+  overflow: auto; /* Add scrollbars if content overflows */
+  word-wrap: break-word; /* Ensure long words wrap */
+  overflow-wrap: break-word; /* Break text when necessary */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+#click-to-decode {
+  position: absolute;
+  top: 85%;
+  left: 83%;
+  cursor: pointer;
+  font-size: 1vw;
+}
+#result-decode {
+  position: absolute;
+  top: 110%;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#real-result-decode {
+  height: 300px;
+  width: 100%;
+  text-wrap: wrap;
+  overflow:auto; /* Add scrollbars if content overflows */
+  word-wrap: break-word; /* Ensure long words wrap */
+  overflow-wrap: break-word; /* Break text when necessary */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+#txt-codemap-download{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 100%;
+  left: 50%;
+flex-wrap: nowrap;
+text-wrap: nowrap;
+line-break: loose;
+  padding: 10px;
+  
+}
+
+
+#click-codemap{
+    font-size: 1vw;
+
+  color: #FFFFFFDE;
+  opacity: 0.8;
+}
+#click-txtcompressed,#click-decodedFile{
+  font-size: 1vw;
+  color: #FFFFFFDE;
+  opacity: 0.8;
+}
+
+#title-encode{
+  position: relative;
+}
+
+#title-decode{
+  position: relative;
+}
+#orEncodeFile{
+display: none;
+}
+#orDecodeFile{
+  display: none;
+}
+#chooseFile-encode{
+  position: absolute;
+  font-size: 0.7vw;
+  width: auto;
+  left: 100%;
+  top: 50%;
+  border: 1px solid grey;
+  text-wrap: nowrap;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#EselectedFile{
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+}
+#EclearChosenFile{
+  position: absolute;
+
+  top:65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+  cursor: pointer;
+
+}
