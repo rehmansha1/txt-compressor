@@ -49,14 +49,13 @@ const writeBinaryFile = (encodedText) => {
   const bufferArray = [];
   for (let i = 0; i < encodedText.length; i += 8) {
     // Take 8 bits at a time and convert them to a byte
-    const byteString = encodedText.slice(i, i + 8).padEnd(8, "0"); // pad the last byte if needed
+    const byteString = encodedText.slice(i, i + 8).padEnd(8, "0"); 
     bufferArray.push(parseInt(byteString, 2)); // Convert the binary string to a decimal byte
   }
   //console.log(new Uint8Array(bufferArray))
   return new Uint8Array(bufferArray);
 };
 
-//MAIN PROCESS DOWN
 export const encodef = async (text) => {
   const freqNodes = calculateFreq(text);
   const tree = BuildHuffmanTree(freqNodes);
@@ -108,7 +107,6 @@ export const encodef = async (text) => {
 export const decodef = async (buffer, tree,externalFile) => {
   // decoding
   let binaryString = "";
-// UNDERSTOOD UNTIL HERE
   if(externalFile){
  // console.log("buffer ",buffer)
   for (let byte of buffer) {
@@ -140,5 +138,5 @@ export const decodef = async (buffer, tree,externalFile) => {
     encodedLink.innerHTML = "Download Decoded File"
   }, 200);
   encodedLink.href = URL.createObjectURL(encodedBlob);
-  encodedLink.download = "finaldecoded.txt";
+  encodedLink.download = "original.txt";
 };
